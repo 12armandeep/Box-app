@@ -1,16 +1,17 @@
-// eslint-disable-next-line no-unused-vars
-import showCards from './showCards';
+import ShowCards from './ShowCards';
 const ShowGrid = ({ shows }) => {
   console.log(shows);
   return (
     <div>
       {shows.map(data => {
-        <showCards
-          key={data.shows.id}
-          id={data.shows.id}
-          name={data.shows.name}
-          //   image ={data.show.image ? data.show.image.medium :'/not-found-image.png'}
-          summary={data.shows.summary}
+        <ShowCards
+          key={data.show.id}
+          id={data.show.id}
+          name={data.show.name}
+          image={
+            data.show.image ? data.show.image.medium : '/not-found-image.png'
+          }
+          summary={data.show.summary}
         />;
       })}
     </div>

@@ -9,8 +9,11 @@ const ActorGrid = ({ actors }) => {
           country={data.person.country ? data.person.country.name : 'null'}
           birthday={data.person.birthday}
           deathday={data.person.deathday}
+          gender={data.person.gender}
           image={
-            data.show.image ? data.show.image.medium : '/not-found-image.png'
+            data.person.image
+              ? data.person.image.medium
+              : '/not-found-image.png'
           }
         />;
       })}
