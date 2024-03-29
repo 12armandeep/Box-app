@@ -2,7 +2,7 @@ import ActorCards from './ActorCards';
 const ActorGrid = ({ actors }) => {
   return (
     <div>
-      {actors.map(data => {
+      {actors.map(data => (
         <ActorCards
           key={data.person.id}
           name={data.person.name}
@@ -15,8 +15,8 @@ const ActorGrid = ({ actors }) => {
               ? data.person.image.medium
               : '/not-found-image.png'
           }
-        />;
-      })}
+        />
+      ))}
       ;
     </div>
   );
