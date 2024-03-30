@@ -8,4 +8,5 @@ const apiGet = async queryString => {
 
 export const searchForShow = query => apiGet(`/search/shows?q=${query}`);
 export const searchForPerson = query => apiGet(`/search/people?q=${query}`);
-export const getElementById = showId => apiGet(`/shows/${showId}`);
+export const getElementById = showId =>
+  apiGet(`/shows/${showId}?embed[]=seasons&embed[]=cast`);
