@@ -1,7 +1,5 @@
 import ShowCards from './ShowCards';
 const ShowGrid = ({ shows }) => {
-  console.log(shows);
-  console.log('helo');
   return (
     <div>
       {shows.map(data => (
