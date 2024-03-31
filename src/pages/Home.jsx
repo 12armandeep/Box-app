@@ -5,9 +5,23 @@ import SearchForm from '../components/Searchform';
 import ShowGrid from '../components/shows/ShowGrid';
 import ActorGrid from '../components/actors/ActorGrid';
 import { useQuery } from '@tanstack/react-query';
+// to understand the concept of reducer this is for understanding only
+// const reducefn = (currentCounter, action) => {
+//   switch (action.type) {
+//     case 'INCREMENT':
+//       return currentCounter + 1;
+//     case 'DECREMENT':
+//       return currentCounter - 1;
+//     case 'RESET':
+//       return 0;
+//     case 'SET_VALUE':
+//       return action.newCounterValue;
+//   }
+// };
 
 const Home = () => {
   const [filter, setFilter] = useState(null);
+  // const [counter, dispatch] = useReducer(reducefn);
 
   const { data: apidata, error: apiDataError } = useQuery({
     queryKey: ['search', filter],
@@ -18,6 +32,19 @@ const Home = () => {
     enabled: !!filter,
     refetchOnWindowFocus: false,
   });
+
+  // const onIncrement = () => {
+  //   dispatch({ type: 'INCREMENT' });
+  // };
+  // const onDecrement = () => {
+  //   dispatch({ type: 'DECREMENT' });
+  // };
+  // const onReset = () => {
+  //   dispatch({ type: 'RESET' });
+  // };
+  // const Set_Value = () => {
+  //   dispatch({ type: 'SET_VALUE', newCounterValue: 500 });
+  // };
   // const [apidata, setApiData] = useState(null);
   // const [apiDataError, setApiDataError] = useState(null);
 
@@ -57,6 +84,19 @@ const Home = () => {
   return (
     <div>
       <SearchForm onSearch={onSearch} />
+      {/* <div>Counter :{counter}</div>
+      <button type="button" onClick={onIncrement}>
+        Increment
+      </button>
+      <button type="button" onClick={onDecrement}>
+        Decrement
+      </button>
+      <button type="button" onClick={onReset}>
+        Reset
+      </button>
+      <button type="button" onClick={Set_Value}>
+        Set Value to 500
+      </button> */}
       <div>{renderApiData()}</div>
     </div>
   );
