@@ -1,5 +1,9 @@
+import { useStartedShows } from '../lib/useStartedShows';
+
 const Started = () => {
-  return <div>Start page</div>;
+  const [starredShows] = useStartedShows();
+  //
+  return <div>Start page , started {starredShows.length}</div>;
 };
 
 export default Started;
