@@ -1,19 +1,20 @@
 import { useState } from 'react';
+import { useStartedShows } from '../lib/useStartedShows';
 const SearchForm = ({ onSearch }) => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useStartedShows();
   const [searchOption, setSearchOption] = useState('shows');
 
-// 1) mount
-// 2) render
-//2.5) logic before next mount
-// 3) unmount
-// useeffect runs at least one
-// useEffect(()=>{
-//   console.log("search option changes" , searchOption)
-//   return(()=>{
-//     console.log("search option before " , searchOption)
-//   })
-// },[searchOption])
+  // 1) mount
+  // 2) render
+  //2.5) logic before next mount
+  // 3) unmount
+  // useeffect runs at least one
+  // useEffect(()=>{
+  //   console.log("search option changes" , searchOption)
+  //   return(()=>{
+  //     console.log("search option before " , searchOption)
+  //   })
+  // },[searchOption])
 
   const onInputChange = ev => {
     setInputValue(ev.target.value);
