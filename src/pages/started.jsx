@@ -8,7 +8,9 @@ const Started = () => {
   const { data: starredShows, error: starredShowsError } = useQuery({
     queryKey: ['starred', starredShowsIds],
     queryFn: () =>
-      gerShowById(starredShows).then(result => result.map(show => ({ show }))),
+      gerShowById(starredShowsIds).then(result =>
+        result.map(show => ({ show }))
+      ),
 
     refetchOnWindowFocus: false,
   });

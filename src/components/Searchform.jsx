@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import { useStartedShows } from '../lib/useStartedShows';
+import { SearchState } from '../lib/useSearchState';
+import CustomRadio from './CustomRadio';
+
 const SearchForm = ({ onSearch }) => {
-  const [inputValue, setInputValue] = useStartedShows();
+  const [inputValue, setInputValue] = SearchState();
   const [searchOption, setSearchOption] = useState('shows');
 
   // 1) mount
@@ -33,26 +35,21 @@ const SearchForm = ({ onSearch }) => {
   return (
     <form onSubmit={onSubmit}>
       <input type="text" value={inputValue} onChange={onInputChange} />
-      <label>
-        Shows
-        <input
-          type="radio"
-          name="search-option"
-          value="shows"
-          checked={searchOption === 'shows'}
-          onChange={onRadioChange}
-        />
-      </label>
-      <label>
-        Actors
-        <input
-          type="radio"
-          name="search-option"
-          value="actors"
-          checked={searchOption === 'actors'}
-          onChange={onRadioChange}
-        />
-      </label>
+      <CustomRadio
+        label="Shows"
+        name="search-option"
+        value="shows"
+        checked={searchOption === 'shows'}
+        onChange={onRadioChange}
+      />
+      <CustomRadio
+        label="Actors"
+        name="search-option"
+        value="actors"
+        checked={searchOption === 'actors'}
+        onChange={onRadioChange}
+      />
+
       {/* <Link to={'/started'}>go to srart page</Link>  */}
       <button type="submit">Search</button>
     </form>

@@ -4,13 +4,14 @@ import Started from './pages/started';
 import MainLayout from './components/mainLayout';
 import Show from './pages/show';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
+import { GlobalTheam } from './theam';
 const queryClient = new QueryClient();
 
 function App() {
   return (
     //client side routing library is route
     <QueryClientProvider client={queryClient}>
+      <GlobalTheam />
       <BrowserRouter>
         <Routes>
           <Route element={<MainLayout />}>
