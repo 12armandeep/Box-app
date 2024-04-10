@@ -40,7 +40,7 @@ const Show = () => {
     return (
       <ShowPageWrapper>
         <BackHomeWrapper>
-          <Link to="/">Go To Home Page</Link>
+          <Link to="/started">Go To Home Page</Link>
         </BackHomeWrapper>
         <ShowMainData
           image={showData.image}

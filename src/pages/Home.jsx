@@ -4,7 +4,7 @@ import { searchForShow, searchForPerson } from '../api/tvmaze';
 import SearchForm from '../components/Searchform';
 import ShowGrid from '../components/shows/ShowGrid';
 import ActorGrid from '../components/actors/ActorGrid';
-
+import { TextCenter } from '../components/common/TextCenter';
 import { useQuery } from '@tanstack/react-query';
 // to understand the concept of reducer this is for understanding only
 // const reducefn = (currentCounter, action) => {
@@ -67,10 +67,10 @@ const Home = () => {
 
   const renderApiData = () => {
     if (apiDataError) {
-      return <div>Error occured:{apiDataError.message}</div>;
+      return <TextCenter>Error occured:{apiDataError.message}</TextCenter>;
     }
     if (apidata?.length === 0) {
-      return <div>No results</div>;
+      return <TextCenter>No results</TextCenter>;
     }
     if (apidata) {
       return apidata[0].show ? (
