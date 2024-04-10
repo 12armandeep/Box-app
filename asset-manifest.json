@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.js": "/Box-app/static/js/main.4a73739f.js",
+    "main.js": "/Box-app/static/js/main.c3a6bea6.js",
     "static/js/453.ed3810f9.chunk.js": "/Box-app/static/js/453.ed3810f9.chunk.js",
     "service-worker.js": "/Box-app/service-worker.js",
+    "static/media/image-not-found.jpg": "/Box-app/static/media/image-not-found.fe8b8cd8275447e5ce04.jpg",
     "index.html": "/Box-app/index.html",
-    "main.4a73739f.js.map": "/Box-app/static/js/main.4a73739f.js.map",
+    "main.c3a6bea6.js.map": "/Box-app/static/js/main.c3a6bea6.js.map",
     "453.ed3810f9.chunk.js.map": "/Box-app/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.4a73739f.js"
+    "static/js/main.c3a6bea6.js"
   ]
 }
