@@ -1,9 +1,10 @@
+import { SearchCard, SearchTmgWrapper } from '../common/SearchCard';
 const ActorCards = ({ name, image, gender, country, birthday, deathday }) => {
   return (
-    <div>
-      <div>
+    <SearchCard>
+      <SearchTmgWrapper>
         <img src={image} alt={name} />
-      </div>
+      </SearchTmgWrapper>
       <h1>
         {name}
         {!!gender && `(${gender})`}
@@ -11,7 +12,7 @@ const ActorCards = ({ name, image, gender, country, birthday, deathday }) => {
       <p>{country ? `Come from ${country}` : 'no country known'}</p>
       {!!birthday && <p>Born on {birthday}</p>}
       <p>{deathday ? `Died on ${deathday}` : 'Alive'}</p>
-    </div>
+    </SearchCard>
   );
 };
 export default ActorCards;

@@ -4,6 +4,7 @@ import { searchForShow, searchForPerson } from '../api/tvmaze';
 import SearchForm from '../components/Searchform';
 import ShowGrid from '../components/shows/ShowGrid';
 import ActorGrid from '../components/actors/ActorGrid';
+
 import { useQuery } from '@tanstack/react-query';
 // to understand the concept of reducer this is for understanding only
 // const reducefn = (currentCounter, action) => {
@@ -83,6 +84,13 @@ const Home = () => {
 
   return (
     <div>
+      <div>
+        <img
+          src="C:/Users/91628/.vscode/React js/moviehub/Moviehub/Movie-hub/Movie/src/assets/bg.jpg"
+          alt=""
+        />
+      </div>
+
       <SearchForm onSearch={onSearch} />
       {/* <div>Counter :{counter}</div>
       <button type="button" onClick={onIncrement}>

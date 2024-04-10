@@ -6,6 +6,8 @@ import ShowMainData from '../components/shows/ShowMainData';
 import Details from '../components/shows/Details';
 import Seasons from '../components/shows/seasons';
 import Cast from '../components/shows/cast';
+import styled from 'styled-components';
+import { FlexGrid } from '../components/common/flexGrid';
 // const useShowById = showId => {
 //   const [showData, setShowData] = useState(null);
 //   const [ShowError, setShowError] = useState(null);
@@ -32,12 +34,14 @@ const Show = () => {
     queryFn: () => getElementById(showId),
   });
   if (ShowError) {
-    return <div>We have an error :{ShowError.message}</div>;
+    return <FlexGrid>We have an error :{ShowError.message}</FlexGrid>;
   }
   if (showData) {
     return (
-      <div>
-        <Link to="/">Go To Home Page</Link>
+      <ShowPageWrapper>
+        <BackHomeWrapper>
+          <Link to="/">Go To Home Page</Link>
+        </BackHomeWrapper>
         <ShowMainData
           image={showData.image}
           name={showData.name}
@@ -45,27 +49,59 @@ const Show = () => {
           summary={showData.summary}
           genres={showData.genres}
         />
-        <div>
+        <InfoBack>
           <h2>Details</h2>
           <Details
             status={showData.status}
             premiered={showData.premiered}
             network={showData.network}
           />
-        </div>
-        <div>
+        </InfoBack>
+        <InfoBack>
           <h2>Seasons</h2>
           <Seasons seasons={showData._embedded.seasons} />
-        </div>
+        </InfoBack>
 
-        <div>
+        <InfoBack>
           <h2>Cast</h2>
           <Cast cast={showData._embedded.cast} />
-        </div>
-      </div>
+        </InfoBack>
+      </ShowPageWrapper>
     );
   }
-  return <div>Show page for show {showId}</div>;
+  return <FlexGrid>Show page for show {showId}</FlexGrid>;
 };
 
 export default Show;
+
+const BackHomeWrapper = styled.div`
+  margin-bottom: 30px;
+  text-align: left;
+  a {
+    padding: 10px;
+    color: dark;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
+
+const ShowPageWrapper = styled.div`
+  margin: auto;
+  @media only screen and (min-width: 768px) {
+    max-width: 700px;
+  }
+  @media only screen and (min-width: 992px) {
+    max-width: 900px;
+  }
+`;
+
+const InfoBack = styled.div`
+  margin-bottom: 40px;
+  h2 {
+    margin: 0;
+    margin-bottom: 30px;
+    font-size: 22px;
+  }
+`;

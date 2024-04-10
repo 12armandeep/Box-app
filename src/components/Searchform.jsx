@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { SearchState } from '../lib/useSearchState';
 import CustomRadio from './CustomRadio';
+import styled from 'styled-components';
 
 const SearchForm = ({ onSearch }) => {
   const [inputValue, setInputValue] = SearchState();
@@ -34,25 +35,80 @@ const SearchForm = ({ onSearch }) => {
   };
   return (
     <form onSubmit={onSubmit}>
-      <input type="text" value={inputValue} onChange={onInputChange} />
-      <CustomRadio
-        label="Shows"
-        name="search-option"
-        value="shows"
-        checked={searchOption === 'shows'}
-        onChange={onRadioChange}
+      <SearchInput
+        type="text"
+        placeholder="Search for something"
+        value={inputValue}
+        onChange={onInputChange}
       />
-      <CustomRadio
-        label="Actors"
-        name="search-option"
-        value="actors"
-        checked={searchOption === 'actors'}
-        onChange={onRadioChange}
-      />
+      <RadioWrapper>
+        <CustomRadio
+          label="Shows"
+          name="search-option"
+          value="shows"
+          checked={searchOption === 'shows'}
+          onChange={onRadioChange}
+        />
+        <CustomRadio
+          label="Actors"
+          name="search-option"
+          value="actors"
+          checked={searchOption === 'actors'}
+          onChange={onRadioChange}
+        />
+      </RadioWrapper>
 
-      {/* <Link to={'/started'}>go to srart page</Link>  */}
-      <button type="submit">Search</button>
+      {/* <Link to={'/started'}>go to srart page</Link>
+       */}
+      <SearchButtonWrapper>
+        <button type="submit">Search</button>
+      </SearchButtonWrapper>
     </form>
   );
 };
 export default SearchForm;
+
+const SearchInput = styled.input`
+  display: block;
+  font-family: 'Roboto', sans-serif;
+  width: 200px;
+  margin: auto;
+  outline: none;
+  padding: 13px 15px;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0px 0px 10px 0px rgba(219, 219, 219, 0.5);
+  font-size: 14px;
+  border-radius: 12px;
+  color: #8d8d8d;
+  &::placeholder {
+    font-weight: 300;
+    color: #8d8d8d;
+  }
+`;
+
+export const RadioWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  label {
+    margin: 0 15px;
+  }
+`;
+
+const SearchButtonWrapper = styled.div`
+  text-align: center;
+  margin-bottom: 30px;
+  button {
+    color: #fff;
+    background-color: blue;
+    margin: auto;
+    pading: 10px 45px;
+    font-size: 25px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+`;

@@ -9,6 +9,7 @@ const theme = {
 };
 const Globalstyles = createGlobalStyle`
 body{
+  
   font-family : ${({ theme }) => theme.fontfamily};
   font-size : 18px;
   margin:0;
