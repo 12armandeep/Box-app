@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/Box-app/static/js/main.29caf330.js",
+    "static/js/453.ed3810f9.chunk.js": "/Box-app/static/js/453.ed3810f9.chunk.js",
+    "service-worker.js": "/Box-app/service-worker.js",
+    "index.html": "/Box-app/index.html",
+    "main.29caf330.js.map": "/Box-app/static/js/main.29caf330.js.map",
+    "453.ed3810f9.chunk.js.map": "/Box-app/static/js/453.ed3810f9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.29caf330.js"
+  ]
+}
