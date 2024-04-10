@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Started from './pages/started';
 import MainLayout from './components/mainLayout';
@@ -12,7 +12,7 @@ function App() {
     //client side routing library is route
     <QueryClientProvider client={queryClient}>
       <GlobalTheam />
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route element={<MainLayout />}>
             <Route path="/" element={<Home />} />
@@ -21,7 +21,7 @@ function App() {
           <Route path="/show/:showId" element={<Show />} />
           <Route path="*" element={<div>Not found</div>}></Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </QueryClientProvider>
   );
 }
